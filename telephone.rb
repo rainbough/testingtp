@@ -10,12 +10,12 @@ get '/' do
   erb :index
 end
 
-get '/twitter' do 
+post '/twitter' do 
   @word = params[:word]
   @output_result = TweetSearch::UserWord.new(@word).search!
 end
 
-post '/twitter' do 
-  @output_result
-  erb :twitter_results
-end
+# post '/twitter' do 
+#   @output_result
+#   erb :twitter_results
+# end
