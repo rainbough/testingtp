@@ -21,7 +21,6 @@ module TweetSearch
       select_word
     end
 
-    private
 
     # Fetch a tweet from Twitter with the provided word.
     #
@@ -66,7 +65,7 @@ module TweetSearch
       @words
     end
 
-    private
+
 
     # Deletes words with less than four characters.
     # 
