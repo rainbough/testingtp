@@ -13,6 +13,7 @@ end
 get '/twitter' do 
   @word = params[:word]
   @output_result = TweetSearch::UserWord.new(@word).search!
+
 end
 
 post '/twitter' do 
