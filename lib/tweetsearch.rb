@@ -3,6 +3,8 @@ require 'bundler/setup'
 require 'twitter'
 
 module TweetSearch
+  
+  # Takes user input and searches through Twitter API for a tweet .
   class UserWord
     attr_reader :word, :tweet, :result
     
@@ -46,12 +48,15 @@ module TweetSearch
     end
   end
 
+  # Takes the returned tweet and cleans it up in order to select an appropriate random word.  
   class TweetSanitizer
     def initialize(tweet)
       @tweet = tweet
     end
 
-    
+    # Splits the retured tweet into an array of words. 
+    # 
+    # Returns an Array of words more than 4 characters that only contain letters.
     def sanitized_words
       @words = @tweet.text.split(" ")
 
@@ -63,10 +68,14 @@ module TweetSearch
 
     private
 
+    # Deletes words with less than four characters.
+    # 
+    # Returns an Array.
     def remove_short_words
       @words = @words.delete_if {|w| w.length < 4}
     end
 
+    # Deletes words that contain anything other than letters.
     def remove_non_alpha_words
       @words.select! {|w| w.match(/^[a-zA-Z]+$/) }
     end
