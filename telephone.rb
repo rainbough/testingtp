@@ -13,5 +13,5 @@ end
 post '/twitter' do 
   @result = TweetSearch::UserWord.new(params[:word]).search!
 
-  erb :something
+  erb :twitter_results
 end
