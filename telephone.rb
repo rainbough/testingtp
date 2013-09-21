@@ -11,7 +11,8 @@ get '/' do
 end
 
 post '/twitter' do 
-  @output_result = TweetSearch::UserWord.new(params[:word]).search!
+  @word = params[:word]
+  @output_result = TweetSearch::UserWord.new(@word).search!
 
   erb :twitter_results
 end
