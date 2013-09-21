@@ -16,6 +16,6 @@ get '/twitter' do
 end
 
 post '/twitter' do 
-  @real
+  @output_result
   erb :twitter_results
 end
