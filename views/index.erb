@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="../public/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
@@ -38,9 +38,11 @@
 			</div>
 
 		<div class="middle">
-				<form>
-					<input type="text" class="text_box">
-					<input id="button" class="button" value="enter" type="submit" action="GET" >
+
+				<form action='/twitter' method="POST">
+					<input name= "word" type="text" class="text_box">
+					<input id="button" value="enter" type="submit">
+
 					
 				</form>
 			</div>
