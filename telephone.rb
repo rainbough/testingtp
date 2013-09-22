@@ -25,6 +25,7 @@ end
 # @gif_url is set to the absolute url so that @gif_url can later be 
 # passed to bit.ly API. 
 post '/twitter' do 
+  
   @result = TweetSearch::UserWord.new(params[:word]).search![0]
   @output_result = GiphySearch::PicSearch.new(@result).fetch_gif!
   @gif_url = "http://media.giphy.com/media/#{@output_result}/giphy.gif"
