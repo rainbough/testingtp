@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'giphy'
-require 'pry'
 require 'bitly'
 
 module BitlySearch
