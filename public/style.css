@@ -6,7 +6,7 @@ body{
 }
 
 
-section{
+.section{
 	width: 100%;
 	height: auto;
 	overflow: auto;
@@ -72,9 +72,9 @@ p{
 .middle{
 	background: #000;
 	border-radius: 50%;
-	width: 400px;
-  	height: 400px;
-  	margin: -50px 0 0 150px;
+	width: 500px;
+  	height: 500px;
+  	margin: -50px 0 50px 120px;
   	box-shadow: 1px 1px 3px #fff; 
   	display: inline-block;
  	
@@ -91,14 +91,14 @@ p{
 	border-radius: 50%;
 	width: 500px;
   	height: 500px;
-  	margin: -100px 0 100px 100px;
   	box-shadow:  2px 2px 3px #fff;  	
 }
 /*-----------------------------------------------------*/
 
 .text_box{
-	margin: 200px 0 0 50px;
+	margin: 230px 0 0 80px;
 	height: 40px;
+	width: 50%;
 }
 
 #button{
@@ -125,6 +125,7 @@ p{
 	margin: 50px 0 0 150px;
 
 }
+
 
 
 
