@@ -5,20 +5,19 @@ require 'sinatra/reloader'
 require 'twitter'
 
 require_relative 'lib/tweetsearch'
+require_relative 'lib/giphysearch'
 
 
 get '/' do 
-  
+
   erb :index
 end
 
 post '/twitter' do 
   @word = params[:word]
-  @output_result = TweetSearch::UserWord.new(@word).search!
-
+ TweetSearch::UserWord.new(@word).search!
+ @output_result = GiphySearch::PicSearch.new(@result).search!
+ erb :twitter_results
 end
 
-# post '/twitter' do 
-#   @output_result
-#   erb :twitter_results
-# end
+
