@@ -37,9 +37,12 @@ module GiphySearch
       end  
      giphy_array = Giphy.search(@result)
      giphy_first_result = giphy_array[0]
-     pic = giphy_first_result.url
+     pic = giphy_first_result.id
+      # pic = giphy_first_result.url
+       # pic = giphy_first_result.absolute_url
     end
   end
+
 end
 
 
