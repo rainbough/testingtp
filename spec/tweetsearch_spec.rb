@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'rspec'
-require_relative '../lib/new_tweet_word.rb'
+require_relative '../lib/tweetsearch.rb'
 
 describe TweetSearch::UserWord do
   let(:user_word) { TweetSearch::UserWord.new('foo') }
