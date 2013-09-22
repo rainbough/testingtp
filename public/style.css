@@ -86,12 +86,22 @@ p{
   	float: left;
 }
 
-.results{
+.results img{
+	background: #000;
+	margin: 0;
+  	 	
+}
+
+.result_page{
+	margin: -50px 0 50px 420px;
 	background: #000;
 	border-radius: 50%;
 	width: 500px;
   	height: 500px;
-  	box-shadow:  2px 2px 3px #fff;  	
+  	box-shadow: 1px 1px 3px #fff; 
+  	display: inline-block;
+  	overflow: hidden;
+
 }
 /*-----------------------------------------------------*/
 
