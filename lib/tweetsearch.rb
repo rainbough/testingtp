@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
+require 'pry'
+
 
 module TweetSearch
   
@@ -36,7 +38,8 @@ module TweetSearch
       # From https://github.com/sferik/twitter#configuration
       # 
       # searches through Twitter client to find the word from html form. Will only return the first tweet.
-      @tweet = client.search(@word, :count => 1)
+      @tweet = client.search(@word, :lang => "en", :count => 1).results.first.text
+
     end
 
     # Choose an appropriate word from the tweet.
@@ -57,7 +60,7 @@ module TweetSearch
     # 
     # Returns an Array of words more than 4 characters that only contain letters.
     def sanitized_words
-      @words = @tweet.text.split(" ")
+      @words = @tweet.split(" ")
 
       remove_short_words
       remove_non_alpha_words

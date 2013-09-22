@@ -3,10 +3,15 @@ require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'twitter'
+
 require_relative 'lib/tweetsearch'
 
 
 get '/' do 
+  puts ENV['CONSUMER_KEY']
+  puts ENV['CONSUMER_SECRET']
+  puts ENV['OAUTH_TOKEN']
+  puts ENV['OAUTH_TOKEN_SECRET']
   erb :index
 end
 
