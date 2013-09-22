@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="../public/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
@@ -9,14 +9,6 @@
 		<header>
 			<h1>Tweet-o-Phone</h1>
 		</header>
-
-			<div class="middle">
-				<form action='/twitter' method="POST">
-					<input type="text" name="word"/>
-					<input type="submit" value="submit"></input>
-				</form>
-				
-			</div>
 			
 		<div class="container">
 		
@@ -46,9 +38,9 @@
 			</div>
 
 		<div class="middle">
-				<form>
-					<input type="text" class="text_box"/>
-					<input id="button" value="enter" type="button" />
+				<form action='/twitter' method="POST">
+					<input name= "word" type="text" class="text_box">
+					<input id="button" value="enter" type="submit">
 					
 				</form>
 			</div>
