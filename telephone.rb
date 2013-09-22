@@ -16,16 +16,19 @@ get '/' do
   erb :index
 end
 
-
+# @result is the resulting word from calling .search! method. 
+# This is returned from Twitter API as an array, we call the first indexed value.
+# is then indexed to the first
+# 
+# @output_result gives the resulting giphy image id (from giphy url).
+# 
+# @gif_url is set to the absolute url so that @gif_url can later be 
+# passed to bit.ly API. 
 post '/twitter' do 
 @result = TweetSearch::UserWord.new(params[:word]).search![0]
-@output_result = GiphySearch::PicSearch.new(@result).post_gif!
+@output_result = GiphySearch::PicSearch.new(@result).fetch_gif!
+@gif_url = "http://media.giphy.com/media/#{@output_result}/giphy.gif"
 
-#   uri = "http://api.giphy.com/v1/gifs/translate?s=#{@result}&api_key=dc6zaTOxFJmzC&limit=1"
-#   resp = Net::HTTP.get_response(URI.parse(url))
-#   buffer = resp.body
-
-#   @output_result = "http://giphy.com/gifs/#{id}"
  erb :twitter_results
 end 
 

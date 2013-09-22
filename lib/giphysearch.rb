@@ -16,34 +16,22 @@ module GiphySearch
     def initialize(result)
       @result = result
     end
-    # Fetch a gif from Giphy with the provided result from the Twitter Search.
+    # Use the provided result from the Twitter Search to search Giphy API. This
+    # results in an Array.
     #
-    # Returns the first matching Giphy::Gif
-    
-    # def search_giphy!
-    #   # search_giphy = JSON.generate[@result[0]]
-    #   search_word = @result.to_s
-    #   url = URI http://api.giphy.com/v1/gifs/search?q={search_word, limit:1}&api_key=dc6zaTOxFJmzC
-    #   response = Net::HTTP.get_response(URI.parse(url))
-    #   buffer = res.body
-    #   id = JSON.parse(buffer)["data"]["id"]
-    #   "http://giphy.com/gifs/#{id}"
-    # end
-
-    def post_gif!
+    # Select index one and call .id on it to return the gif id.
+    # 
+    # Returns a String.
+    def fetch_gif!
      Giphy::Configuration.configure do |config|
       # config.version = ""
       config.api_key = "dc6zaTOxFJmzC" 
       end  
-     giphy_array = Giphy.search(@result)
-     giphy_first_result = giphy_array[0]
-     pic = giphy_first_result.id
-      # pic = giphy_first_result.url
-       # pic = giphy_first_result.absolute_url
+    Giphy.search(@result)[0].id
+  
     end
   end
 
 end
-
 
 
