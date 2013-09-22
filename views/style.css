@@ -1,84 +1,129 @@
 body{
 	background: #000;
-
-	font: #fff;
+	color: #fff;
+	font-family: 'Cantora One', sans-serif;
+	margin: none;
 }
+
 
 section{
 	width: 100%;
-	height: 100%;
-	margin: -10px 0 0 -10px;
-
-	position: fixed;
-	background: rgb(0,128,128); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(0,128,128,1) 0%, rgba(0,0,0,1) 77%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,128,128,1)), color-stop(77%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,128,128,1) 0%,rgba(0,0,0,1) 77%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,128,128,1) 0%,rgba(0,0,0,1) 77%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,128,128,1) 0%,rgba(0,0,0,1) 77%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,128,128,1) 0%,rgba(0,0,0,1) 77%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-
-
-}
-
-.middle{
-	background: #000;
-	border-radius: 50%;
-	width: 400px;
-  	height: 400px;
-  	margin: 0 0 0 375px;
-  	position: fixed;
-  	z-index: 999;
-  	box-shadow:  2px 2px 3px teal;
-  	
-}
-.top{
-
-	
-	width: 100%;
 	height: auto;
-	margin: 0 auto 0 auto;
-	display: block;
-	overflow: hidden;
+	overflow: auto;
+	margin: -10px 0 0 0;
+	overflow: auto;
+	background: rgb(30,87,153); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
 }
 
-
-
-.container{
-
-	width: 200px;
-	height: auto;
-	border-radius: 50%;
-  	position: absolute;
-  	top: 0; left: 0; bottom: 0; right: 0;
-  
-	
-}
 header{
-	margin: 0 0 0 300px;
+	margin: 150px 0 0 100px;
 	font-size: 48px;
 	font-family: 'Cantora One', sans-serif;
 	text-shadow: 1px 1px 3px #fff;
-
+	color: #000;
 }
 
 
+/*These containers contain the circular dots on the side of the page*/
+.container{
 
+	width: 100%;
+	height: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	position: absolute;	
+}
+.container_2{
+	width: 100%;
+	height: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	position: relative;	
+}
+
+p{
+	font-size: 30px;
+}
+
+.top{
+	width: 100%;
+	height: auto;
+	margin: 0 0 0 0;
+	display: block;
+}
 .top div{
-	background: rgba(0,128,128,1);
+	
 	border-radius: 50%;
 	box-shadow: inset 1px 1px 2px #000;
 	display: inline-block;
 	height: 50px;
 	width: 50px;
 	float: left;
-	margin:20px 20px 20px 20px;
+	margin:20px;
+}
+/*-----------------------------------------*/
+/* These are the large black circles with input and results*/
+.middle{
+	background: #000;
+	border-radius: 50%;
+	width: 400px;
+  	height: 400px;
+  	margin: -50px 0 0 150px;
+  	box-shadow: 1px 1px 3px #fff; 
+  	display: inline-block;
+ 	
+}
+.middle_text{
+
+  	margin: 0 0 0 150px;
+  	display: inline-block;
+  	float: left;
 }
 
-input{
-	margin: 200px 0 0 75px;
+.results{
+	background: #000;
+	border-radius: 50%;
+	width: 500px;
+  	height: 500px;
+  	margin: -100px 0 100px 100px;
+  	box-shadow:  2px 2px 3px #fff;  	
+}
+/*-----------------------------------------------------*/
+
+.text_box{
+	margin: 200px 0 0 50px;
 	height: 40px;
+}
+
+#button{
+	height: 75px;
+	width: 75px;
+	border-radius: 50%;
+	background: black;
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 20px;
+	font-family: 'Cantora One', sans-serif;
+}
+
+.results p{
+	font-size: 30px;
+	
+	color: #fff;
+}
+.text_r{
+	margin:100px 0 0 0;
+}
+
+.p_results{
+	margin: 50px 0 0 150px;
+
 }
 
 
