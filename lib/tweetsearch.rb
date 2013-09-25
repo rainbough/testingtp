@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
 require 'json'
+require 'pry'
 
 
 module TweetSearch
@@ -18,16 +19,12 @@ module TweetSearch
     # random word from the Tweet.
     #
     # Returns the String word.
-    def search!
-      fetch_tweet
-      select_word
-    end
 
 
     # Fetch a tweet from Twitter with the provided word.
     #
     # Returns the matching Twitter::Tweet.
-    def fetch_tweet
+    def fetch_tweet!
       client = Twitter::Client.new.configure do |config|
         config.consumer_key = ENV['CONSUMER_KEY']
         config.consumer_secret = ENV['CONSUMER_SECRET']
@@ -38,9 +35,16 @@ module TweetSearch
       # From https://github.com/sferik/twitter#configuration
       # 
       # searches through Twitter client to find the word from html form. Will only return the first tweet.
-      @tweet = client.search(@word, :lang => "en", :count => 1).results.first.text
+      if client.search(@word, :lang => "en", :count => 1).results.empty?
+        return true
+      else
+        @tweet = client.search(@word, :lang => "en", :count => 1).results.first.text
+      
+        select_word
 
+      end
     end
+
 
     # Choose an appropriate word from the tweet.
     #

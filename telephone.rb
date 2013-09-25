@@ -6,6 +6,7 @@ require 'twitter'
 require 'giphy'
 require 'json'
 require 'net/http'
+require 'pry'
 
 require_relative 'lib/tweetsearch.rb'
 require_relative 'lib/giphysearch'
@@ -26,10 +27,18 @@ end
 # passed to bit.ly API. 
 post '/twitter' do 
   
-  @result = TweetSearch::UserWord.new(params[:word]).search![0]
-  @output_result = GiphySearch::PicSearch.new(@result).fetch_gif!
-  @gif_url = "http://media.giphy.com/media/#{@output_result}/giphy.gif"
-   
+  # @check_result = TweetSearch::UserWord.new(params[:word]).search!
+  # if @result == false 
+  #   @output_result = nil
+
+# Why isn't the gibberish word stopping here!
+  if TweetSearch::UserWord.new(params[:word]).fetch_tweet! == true
+    @output_result = nil
+  else 
+    @check_result = TweetSearch::UserWord.new(params[:word]).fetch_tweet!
+    @output_result = GiphySearch::PicSearch.new(@check_result[0]).fetch_gif!
+    @gif_url = "http://media.giphy.com/media/#{@output_result}/giphy.gif"
+  end
   erb :twitter_results
 end 
 

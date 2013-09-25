@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'giphy'
 require 'json'
 require 'net/http'
-
+require 'pry'
 
 require_relative 'tweetsearch'
 
