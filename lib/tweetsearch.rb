@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
 require 'json'
-require 'pry'
+# require 'pry'
 
 
 module TweetSearch
@@ -17,13 +17,14 @@ module TweetSearch
   
     # Fetch a Tweet containing the provided word and select another
     # random word from the Tweet.
-    #
-    # Returns the String word.
-
-
-    # Fetch a tweet from Twitter with the provided word.
-    #
-    # Returns the matching Twitter::Tweet.
+    # 
+    # From https://github.com/sferik/twitter#configuration
+    # 
+    # Returns false if the word is not found in a tweet. 
+    # 
+    # If a tweet is found containing the inputed word, it is sent to select_word method.
+    # 
+    # Returns the String word 
     def fetch_tweet!
       client = Twitter::Client.new.configure do |config|
         config.consumer_key = ENV['CONSUMER_KEY']
@@ -32,15 +33,14 @@ module TweetSearch
         config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
       end
 
-      # From https://github.com/sferik/twitter#configuration
-      # 
-      # searches through Twitter client to find the word from html form. Will only return the first tweet.
-      if client.search(@word, :lang => "en", :count => 1).results.empty?
-        return true
-      else
-        @tweet = client.search(@word, :lang => "en", :count => 1).results.first.text
       
-        select_word
+      tweets = client.search(@word, :lang => "en", :count => 1).results
+      if tweets.empty?
+        return false
+      else
+        @tweet = tweets.first.text
+      
+        select_word(@tweet)
 
       end
     end
@@ -49,13 +49,14 @@ module TweetSearch
     # Choose an appropriate word from the tweet.
     #
     # Returns the String newly selected word.
-    def select_word
-      @result = TweetSanitizer.new(@tweet).sanitized_words.sample(1)
+    def select_word(tweet)
+      @result = TweetSanitizer.new(tweet).sanitized_words.sample(1)
     end
   end
 
   # Takes the returned tweet and cleans it up in order to select an appropriate random word.  
   class TweetSanitizer
+    
     def initialize(tweet)
       @tweet = tweet
     end
@@ -87,7 +88,3 @@ module TweetSearch
     end
   end
 end
-
-#word_search = TweetSearch::UserWord.new('baseball').search!
-#puts word_search.tweet.inspect
-#puts word_search.result
