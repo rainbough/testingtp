@@ -17,12 +17,24 @@ describe TweetSearch::UserWord do
     # Don't actually connect to the Twitter API.
     Twitter::Client.stub_chain(:new, :configure, :search)
   end
+  context 'word is found in Twitter API' do
+    describe '#search!' do
+      it 'should return a random word from a tweet' do
+        user_word.search!
 
-  describe '#search!' do
-    it 'should return a random word from a tweet' do
-      user_word.search!
+        expect(user_word.result).to eq(@random_word)
+      end
+    end
+  end
 
-      expect(user_word.result).to eq(@random_word)
+   context 'word is not found in Twitter API' do
+    describe '#search!' do
+      it 'should return false' do
+        @random_word = 'jfdkfhdjh'
+        user_word.search!
+
+        expect(user_word.result).to eq(false)
+      end
     end
   end
 end

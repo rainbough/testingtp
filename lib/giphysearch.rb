@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'giphy'
 require 'json'
 require 'net/http'
-
+# require 'pry'
 
 require_relative 'tweetsearch'
 
@@ -19,15 +19,15 @@ module GiphySearch
     # Use the provided result from the Twitter Search to search Giphy API. This
     # results in an Array.
     #
-    # Select index one and call .id on it to return the gif id.
+    # Select index one and call .id on it to return the 
+    # gif id (so the absolute url can be used in telephone.rb to embed gif).
     # 
     # Returns a String.
     def fetch_gif!
       Giphy::Configuration.configure do |config|
-        # config.version = ""
         config.api_key = "dc6zaTOxFJmzC" 
       end  
-      Giphy.search(@result)[0].id
+      Giphy.search(@result).first.id
     end
   end
 end
