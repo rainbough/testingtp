@@ -6,11 +6,13 @@
 <body>
 	<div class="section">
 		<header>
-			<h1>Tweet-o-Phone <%= @tweet %></h1>
+			<h1>Tweet-o-Phone</h1>
 		</header>
 			
 		<div class="container">
 			<div class="top">
+				<div></div>
+				<div></div>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -29,12 +31,15 @@
 <!--content area-->		
 		<div class="middle_text">
 			<br>
-			<br>
 			<p>Results</p>
 		</div>
 		<div class="result_page">
 			<div class="results">
-			<img src= "<%= @gif_url %>" height=250 >
+			<% if @output_result.nil? %>
+				<p> Try again </p>
+			<% else %>
+				<img src= "<%= @gif_url %>" height=250 >
+			<% end %>
 			</div>
 		</div>
 
@@ -53,7 +58,8 @@
 					<div></div>
 					<div></div>
 					<div></div>
-					
+					<div></div>
+					<div></div>
 					
 				</div>
 			</div>
