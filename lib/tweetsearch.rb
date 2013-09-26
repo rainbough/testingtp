@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
 require 'json'
-# require 'pry'
+require 'pry'
 
 
 module TweetSearch
@@ -34,14 +34,13 @@ module TweetSearch
       end
 
       
-      tweets = client.search(@word, :lang => "en", :count => 1).results
+      tweets = client.search(word, :lang => "en", :count => 1).results
       if tweets.empty?
         return false
       else
-        @tweet = tweets.first.text
-      
-        select_word(@tweet)
-
+        tweet = tweets.first
+        tweet_text = tweet.text 
+        return [select_word(tweet_text).first, tweet]
       end
     end
 
@@ -49,8 +48,8 @@ module TweetSearch
     # Choose an appropriate word from the tweet.
     #
     # Returns the String newly selected word.
-    def select_word(tweet)
-      @result = TweetSanitizer.new(tweet).sanitized_words.sample(1)
+    def select_word(tweet_text)
+      @result = TweetSanitizer.new(tweet_text).sanitized_words.sample(1)
     end
   end
 
