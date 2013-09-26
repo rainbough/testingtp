@@ -24,6 +24,7 @@ end
 # 
 # Otherwise, @output_result is set to nil. This creates a 
 # "Try Again" option in twitter_results.erb. 
+
 post '/twitter' do 
   
   @check_result = TweetSearch::UserWord.new(params[:word]).fetch_tweet!
@@ -45,6 +46,13 @@ end
 
 get "/twitter_trail" do
   @params = params
+
+  trail = { :user_word => {
+    :tweet_id => @tweet_id,
+    :twitter_word => 
+  } 
+
+  }
   erb :twitter_trail
 end
 
