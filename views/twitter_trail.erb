@@ -1,1 +1,14 @@
-<%= @params %>
+ <html>
+ <heah></head>
+ <body>
+ 
+
+<% if @giphy_id.nil? %>
+	<p> Try again </p>
+<% else %>
+	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>
+	<a href = "https://twitter.com/twitter/status/<%=@tweet_id %>" height=100>Click here</a>
+<% end %>
+<%= @twitter_word %>
+</body>
+</html>

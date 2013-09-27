@@ -40,6 +40,12 @@
 		<div class="middle_text">
 			<br>
 			<p>Results</p>
+			<% if @giphy_id.nil? %>
+				<p> Try again </p>
+		<% else %>
+			<img src = "<%=@gif_url%>" height=250>
+			<a href = "https://twitter.com/twitter/status/<%=@tweet_id %>" height=100>Click here</a>
+		<% end %>
 		</div>
 	
 			
@@ -50,11 +56,7 @@
 			<button class="play_again" actions="/">Play Again</button>
 			<div class="result_page">
 				<div class="results">
-			<% if @output_result.nil? %>
-				<p> Try again </p>
-			<% else %>
-				<img src= "<%= @gif_url %>" height=250 >
-			<% end %>
+		
 				</div>
 
 			</div>
