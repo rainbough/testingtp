@@ -34,7 +34,7 @@ post '/twitter' do
     @giphy_id = GiphySearch::PicSearch.new(twitter_word).fetch_gif!
     # @gif_url = "http://media.giphy.com/media/#{@giphy_id}/giphy.gif"
   else 
-    @giphy_id = nil
+    @giphy_id = "PPIusDh8elXJS"
   end
 
   redirect "/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{twitter_word}"
