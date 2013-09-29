@@ -11,7 +11,7 @@ require 'net/http'
 
 require_relative 'lib/tweetsearch.rb'
 require_relative 'lib/giphysearch'
-require_relative 'lib/bitlysearch.rb'
+# require_relative 'lib/bitlysearch.rb'
 
 get '/' do 
   erb :index
