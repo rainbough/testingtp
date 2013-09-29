@@ -1,17 +1,19 @@
  <html>
- <heah></head>
+ <head></head>
  <body>
 
 <a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272">Tweets by @Tweet_o_Phone</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<% if @giphy_id.nil? %>
-	<img src= "http://media2.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>
+<% if @check_result %>
+	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>		
 <% else %>
-	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>	
-	<a href="https://twitter.com/twitter/status/<%=@tweet_id %>" height=100>
-
+	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>
 <% end %>
+<blockquote class="twitter-tweet"><p>Search API will now always return "real" Twitter user IDs. The with_twitter_user_id parameter is no longer necessary. An era has ended. ^TS</p>&mdash; Twitter API (@twitterapi) <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>" </a></blockquote>
+<a href= "http://twitter.com/twitter/status/<%=@tweet_id %>" height=250></a>
 <%= @twitter_word %>
+<%= @bitly %>
 </body>
 </html>
+

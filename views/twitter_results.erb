@@ -34,24 +34,37 @@
 		</div>
 
 		<div class="title">
-			<h1>Tweet-o-Phone</h1>
+	
+			
+		<h1>Tweet-o-Phone</h1>
+	
+	
 		</div>
+
 <!--content area-->		
 		<div class="middle_text">
 			<br>
 			<p>Results</p>
-			<% if @giphy_id.nil? %>
-				<p> Try again </p>
-		<% else %>
-			<img src = "<%=@gif_url%>" height=250>
-			<a href = "https://twitter.com/twitter/status/<%=@tweet_id %>" height=100>Click here</a>
-		<% end %>
-		</div>
-	
-			
 
-				
-			</div>
+<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272">Tweets by @Tweet_o_Phone</a>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<% if @check_result %>
+	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>		
+		
+		
+
+<% else %>
+	<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" height=250>
+<% end %>
+
+<%= @twitter_word %>
+
+<blockquote class="twitter-tweet">
+			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"</a>
+		</blockquote>
 		<div class="circles">
 			<button class="play_again" actions="/">Play Again</button>
 			<div class="result_page">

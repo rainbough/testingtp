@@ -7,10 +7,11 @@ require 'giphy'
 require 'json'
 require 'net/http'
 require 'pry'
+require 'bitly'
 
 require_relative 'lib/tweetsearch.rb'
 require_relative 'lib/giphysearch'
-
+require_relative 'lib/bitlysearch.rb'
 
 get '/' do 
   erb :index
@@ -26,18 +27,19 @@ end
 # "Try Again" option in twitter_results.erb. 
 
 post '/twitter' do 
-  @check_result = TweetSearch::UserWord.new(params[:word]).fetch_tweet!
+  @user_word = params[:word]
+  @check_result = TweetSearch::UserWord.new(@user_word).fetch_tweet!
 
   if @check_result
-    @tweet_id = @check_result[1].id
-    twitter_word = @check_result[0]
-    @giphy_id = GiphySearch::PicSearch.new(twitter_word).fetch_gif!
-    # @gif_url = "http://media.giphy.com/media/#{@giphy_id}/giphy.gif"
+    @tweet_id = @check_result[1].id  
+    @twitter_word = @check_result[0]
+    @giphy_id = GiphySearch::PicSearch.new(@twitter_word).fetch_gif!
+    
   else 
     @giphy_id = "PPIusDh8elXJS"
   end
 
-  redirect "/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{twitter_word}"
+  redirect "/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{@twitter_word}"
   erb :twitter_results
 end 
 
@@ -48,13 +50,9 @@ get "/twitter_trail" do
   @tweet_id = params[:tweet_id]
   @giphy_id = params[:giphy_id]
   @twitter_word = params[:twitter_word]
-
-  # trail = { :user_word => word,
-  #   :tweet_id => tweet_id,
-  #   :twitter_word => twitter_word
-  # } 
+  @bitly = BitlySearch::Bitly.new("/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{@twitter_word}").shorten_url 
   
-  erb :twitter_trail
+  erb :twitter_results
 end
 
 
