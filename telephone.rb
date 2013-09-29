@@ -6,7 +6,7 @@ require 'twitter'
 require 'giphy'
 require 'json'
 require 'net/http'
-require 'pry'
+# require 'pry'
 require 'bitly'
 
 require_relative 'lib/tweetsearch.rb'
