@@ -44,10 +44,18 @@
 			
 
 				<div class="instructions">
-					<p>Input a word you would like to search twitter for.
-					<div></div>Tweet-o-Phone will return a tweet with that word in it.
-					<div></div>Then it randomly picks another word in that tweet and sends it to Giphy.
-					<div></div>Giphy sends back an animated gif related to that word.</p>
+					<div class="bullets">
+
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<p>Input a word you would like to search twitter for.</p>
+					<p>Tweet-o-Phone will return a tweet with that word in it.</p>
+					<p>Then it randomly picks another word in that tweet and sends it to Giphy.</p>
+					<p>Giphy sends back an animated gif related to that word.</p>
 
 				</div>
 	
@@ -57,7 +65,7 @@
 			
 
 				<form action='/twitter' method="POST">
-					<input name="word" autofocus="true" type="text" class="text_box"></input>
+					<input name="word" autofocus="true" type="text" class="text_box" style="height: 30px"></input>
 					<input type="submit" value="submit" id="button" ></input>	
 				</form>
 			</div>
