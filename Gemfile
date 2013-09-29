@@ -10,6 +10,6 @@ gem 'json'
 gem 'net-http-persistent'
 gem 'bitly'
 
-group :development do
-  gem 'pry'
-end
+# group :development do
+#   gem 'pry'
+# end
