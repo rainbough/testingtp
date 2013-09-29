@@ -6,7 +6,7 @@ require 'twitter'
 require 'giphy'
 require 'json'
 require 'net/http'
-# require 'pry'
+require 'pry'
 require 'bitly'
 
 require_relative 'lib/tweetsearch.rb'
@@ -50,7 +50,7 @@ get "/twitter_trail" do
   @tweet_id = params[:tweet_id]
   @giphy_id = params[:giphy_id]
   @twitter_word = params[:twitter_word]
-  @bitly = BitlySearch::Bitly.new("/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{@twitter_word}").shorten_url 
+  # @bitly = BitlySearch::Bitly.new("/twitter_trail?giphy_id=#{@giphy_id}&tweet_id=#{@tweet_id}&twitter_word=#{@twitter_word}").shorten_url 
   
   erb :twitter_results
 end
