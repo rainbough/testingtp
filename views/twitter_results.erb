@@ -45,21 +45,17 @@
 		<div class="middle_text">
 			<br>
 			<p>Results</p>
-		
 
-			<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272">Tweets by @Tweet_o_Phone</a>
+			<%= @twitter_word %>
 
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<blockquote class="twitter-tweet">
+			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
+		</blockquote>
 
 
 		</div>
 
-		<%= @twitter_word %>
-
-		<blockquote class="twitter-tweet">
-			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"</a>
-		</blockquote>
-
+		
 		<div class="circles">
 			<button class="play_again" actions="/">Play Again</button>
 			<div class="result_page">
@@ -76,7 +72,13 @@
 			</div>
 			
 		</div>
-			<!-- </div> -->
+		
+			<div id="tweets">
+				
+				<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272" height="250px" data-chrome="transparent" >Tweets by @Tweet_o_Phone</a>
+
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
 
 
 <!--Bottom decoration circles -->
