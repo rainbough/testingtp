@@ -59,15 +59,15 @@
 		
 		<div class="circles">
 			<h3>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h3>
-			<!-- <form action="http://agile-hollows-6834.herokuapp.com/"> -->
-				<button class="play_again" type="submit" action="/">Play Again</button>
-			<!-- </form> -->
+			<form action="http://agile-hollows-6834.herokuapp.com/">
+				<button class="play_again" type="submit">Play Again</button>
+			</form>
 			<div class="result_page">
 				<div class="results">
 					<% if @check_result %>
 						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif">			
 					<% else %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif">
+						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" width="500px">
 					<% end %>
 		
 
