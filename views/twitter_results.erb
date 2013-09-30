@@ -59,7 +59,9 @@
 		
 		<div class="circles">
 			<h3>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h3>
-			<button class="play_again" actions="http://agile-hollows-6834.herokuapp.com/">Play Again</button>
+			<!-- <form action="http://agile-hollows-6834.herokuapp.com/"> -->
+				<button class="play_again" type="submit" action="/">Play Again</button>
+			<!-- </form> -->
 			<div class="result_page">
 				<div class="results">
 					<% if @check_result %>
