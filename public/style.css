@@ -186,9 +186,16 @@ form .input{
 	
 }
 
-h5{
-	font-family: Verdana;
-	color: #000;
+.tree div{
+	color: #fff;
+	margin: 100px 0 0 20px;
 }
 
+.tree{
+	background: #000;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+
+}
 

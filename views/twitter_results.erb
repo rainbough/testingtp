@@ -46,28 +46,34 @@
 			<br>
 			<h3>Results</h3>
 
-			
+		<div class="tree">
+			<div><h5>You searched for "<%= @word %>"</h5></div>
+		</div>
 		<h5>You Found this Tweet</h5>
 		<blockquote class="twitter-tweet">
 			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
 		</blockquote>
-
-		<h5>Tweet-o-Phone Picked this word from that tweet:  <strong>"<%= @twitter_word %>"</strong></h5>
+		<div class="tree">
+		<div><h5>Tweet-o-Phone Picked this word from that tweet:  <strong>"<%= @twitter_word %>"</strong></h5></div>
+	</div>
 		
 		</div>
 
 		
 		<div class="circles">
-			<h3>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h3>
+			
+				<h5>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h5>
+		
 			<form action="http://agile-hollows-6834.herokuapp.com/">
 				<button class="play_again" type="submit">Play Again</button>
 			</form>
+		
 			<div class="result_page">
 				<div class="results">
 					<% if @check_result %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif">			
+						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">			
 					<% else %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif">
+						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">
 					<% end %>
 		
 
