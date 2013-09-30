@@ -29,16 +29,16 @@
 				<div></div>
 				<div></div>
 				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 				
 			</div>
 		</div>
 
 		<div class="title">
-	
-			
-		<h1>Tweet-o-Phone</h1>
-	
-	
+			<h1>Tweet-o-Phone</h1>
 		</div>
 
 <!--content area-->		
@@ -51,15 +51,15 @@
 			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
 		</blockquote>
 		<div class="tree">
-		<div><h5>Tweet-o-Phone Picked this word from that tweet: <h1> <strong>"<%= @twitter_word %>"</h1></strong></h5></div>
-	</div>
+			<div id="tweet-word">
+				<h5>Tweet-o-Phone Picked this word from that tweet: <h1> <strong>"<%= @twitter_word %>"</h1></strong></h5>
+			</div>
+		</div>
 		
 		</div>
 
-		
+		<h4>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h4>
 		<div class="circles">
-			
-				<h5>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h5>
 		
 			<form action="http://agile-hollows-6834.herokuapp.com/">
 				<button class="play_again" type="submit">Play Again</button>
@@ -92,6 +92,10 @@
 <!--Bottom decoration circles -->
 			<div class="container_2">
 				<div class="top">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
 					<div></div>
 					<div></div>
 					<div></div>
