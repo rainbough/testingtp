@@ -31,7 +31,7 @@ section{
 	color: #000;
 	clear: both;
 }
-.title h1{
+.title h2{
 	margin: 0 0 0 20px;
 
 }
@@ -138,7 +138,7 @@ p{
   	height: 500px;
   	box-shadow: 1px 1px 3px #fff; 
   	display: inline-block;
-  
+  	overflow: hidden;
 
 }
 
@@ -200,4 +200,10 @@ form .input{
 	border-radius: 50%;
 
 }*/
+
+.movie_box{
+	margin: 20px;
+	height: 400px;
+	width: 400px;
+}
 

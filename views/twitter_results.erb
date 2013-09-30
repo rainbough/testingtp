@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="title">
-			<h1>Tweet-o-Phone</h1>
+			<h2>Tweet-o-Phone</h2>
 		</div>
 
 <!--content area-->		
@@ -58,7 +58,7 @@
 		
 		</div>
 
-		<h4>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h4>
+		<h3>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h3>
 		<div class="circles">
 		
 			<form action="http://agile-hollows-6834.herokuapp.com/">
@@ -67,11 +67,13 @@
 		
 			<div class="result_page">
 				<div class="results">
+					<div class="movie_box">
 					<% if @check_result %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">			
+						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 400px; max-height: 400px">			
 					<% else %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">
+						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 400px; max-height: 400px">
 					<% end %>
+				</div>
 		
 
 				</div>
