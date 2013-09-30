@@ -94,7 +94,7 @@ p{
 	
 	float: left;
 	font-size: 24px;
-	margin: 0 0 0 40px;
+	margin: 0 20px 0 40px;
 	display: inline-block;
 	width: 40%;
 	height: auto;
@@ -186,6 +186,9 @@ form{
 	
 }
 
-
+h5{
+	font-family: Verdana;
+	color: #000;
+}
 
 
