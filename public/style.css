@@ -202,8 +202,9 @@ form .input{
 }*/
 
 .movie_box{
-	margin: 20px;
+	display: block;
 	height: 400px;
 	width: 400px;
+	margin: 50px auto 50px auto;
 }
 
