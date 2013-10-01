@@ -38,33 +38,29 @@
 		</div>
 
 		<div class="title">
-			<h2>Tweet-o-Phone</h2>
+			<h3>Tweet-o-Phone</h3>
 		</div>
 
 <!--content area-->		
 		<div class="middle_text">
-			<br>
 			<h3>Results</h3>
-
 		<h5>You Found this Tweet</h5>
 		<blockquote class="twitter-tweet">
 			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
 		</blockquote>
 		<div class="tree">
 			<div id="tweet-word">
-				<h5>Tweet-o-Phone Picked this word from that tweet: <h1> <strong>"<%= @twitter_word %>"</h1></strong></h5>
+				<h5>Tweet-o-Phone Picked this word from that tweet: <h3> <strong>"<%= @twitter_word %>"</h3></strong></h5>
 			</div>
 		</div>
 		
 		</div>
-
-		<h3>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h3>
 		<div class="circles">
 		
 			<form action="http://agile-hollows-6834.herokuapp.com/">
 				<button class="play_again" type="submit">Play Again</button>
 			</form>
-		
+			<%= @twitter_word %>
 			<div class="result_page">
 				
 				<div class="movie_box">
@@ -80,9 +76,7 @@
 			</div>
 			
 		</div>
-		
-			<blockquote>
-				
+			<blockquote class="timeline">
 				<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272" height="250px" data-chrome="transparent" >Tweets by @Tweet_o_Phone</a>
 			</blockquote>
 
